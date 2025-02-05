@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "uname",
-  description: "uname",
+  title: "My Notes Hub",
+  description: "Notes Sharing App",
 };
 
 export default function RootLayout({ children }) {
