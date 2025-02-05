@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { BsIncognito } from "react-icons/bs";
 import Link from "next/link";
+import Icon from "@mdi/react";
+import { mdiIncognito } from "@mdi/js";
 
 export function Header() {
   const { toast } = useToast();
@@ -11,14 +13,14 @@ export function Header() {
     <div className="fixed top-0 left-0 right-0 z-50 bg-gray-100 px-4 py-3">
       <div className="flex items-center justify-between mb-4">
         <Link href={"/"}>
-          <div className="w-10 h-10 rounded-full overflow-hidden p-1 bg-black text-white">
-            <BsIncognito className="h-full w-full" />
+          <div className="w-10 h-10 rounded-full overflow-hidden bg-black text-white flex justify-center items-center">
+            <Icon path={mdiIncognito} size={1.3} />
           </div>
         </Link>
-        <h1 className="text-xl font-semibold">Ingoude Ramen</h1>
-        <div className="w-10 h-10 rounded-full overflow-hidden">
+        <h1 className="text-xl font-bold">MY NOTES HUB</h1>
+        <div className="w-10 h-10 rounded-full overflow-hidden  border border-black">
           <img
-            src={`/placeholder.svg?height=40&width=40`}
+            src={`/Image.jpg`}
             alt="Profile"
             className="w-full h-full object-cover"
           />
