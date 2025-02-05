@@ -1,19 +1,13 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
 import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/ui/header";
 import Footer from "@/components/custom/Footer";
-
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import Head from "next/head"; // Import Head component
+import Head from "next/head";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -33,6 +27,16 @@ export default function RootLayout({ children }) {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4728036164112649"
           crossorigin="anonymous"
         ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4728036164112649",
+            enable_page_level_ads: true
+          });
+        `,
+          }}
+        />
       </Head>
       <body>
         <header>
