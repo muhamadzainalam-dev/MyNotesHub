@@ -68,7 +68,7 @@ export function Category() {
     <div className="grid grid-cols-2 gap-4">
       {categorydata.map((item) => (
         <div className="bg-white rounded-xl overflow-hidden" key={item.name}>
-          <a href={item.link}>
+          <a href={item.link} target="blank">
             <div className="aspect-square rounded-xl overflow-hidden border">
               <img
                 src={item.image}
