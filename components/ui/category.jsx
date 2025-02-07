@@ -1,16 +1,6 @@
-"use client";
-import { useEffect } from "react";
 import React from "react";
 
 export function Category() {
-  useEffect(() => {
-    // Notice banner ad script
-    const noticeBannerScript = document.createElement("script");
-    noticeBannerScript.src =
-      "//pl25799476.effectiveratecpm.com/af31e052137ab40ed4972cbb5759126b/invoke.js";
-    noticeBannerScript.async = true;
-    document.body.appendChild(noticeBannerScript);
-  }, []);
   const categorydata = [
     {
       name: "Mathematics Notes",
@@ -32,11 +22,6 @@ export function Category() {
       image: "/chemistry.jpg",
       link: "https://drive.google.com/drive/folders/1d94ldGx8wLzPPOOlvXMc82Qea95N9Wa1?usp=drive_link",
     },
-  ];
-
-  const ads = new Array(4).fill("ad");
-
-  const moreCategoryData = [
     {
       name: "Biology Notes",
       image: "/biology.png",
@@ -63,27 +48,6 @@ export function Category() {
     <div>
       <div className="grid grid-cols-2 gap-4">
         {categorydata.map((item) => (
-          <div className="bg-white rounded-xl overflow-hidden" key={item.name}>
-            <a href={item.link} target="blank">
-              <div className="aspect-square rounded-xl overflow-hidden border">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-3">
-                <h3 className="font-medium mb-1 text-center">{item.name}</h3>
-              </div>
-            </a>
-          </div>
-        ))}
-      </div>
-      <div className="w-full flex justify-center my-5">
-        <div id="container-af31e052137ab40ed4972cbb5759126b"></div>
-      </div>
-      <div className="grid grid-cols-2 gap-4">
-        {moreCategoryData.map((item) => (
           <div className="bg-white rounded-xl overflow-hidden" key={item.name}>
             <a href={item.link} target="blank">
               <div className="aspect-square rounded-xl overflow-hidden border">
