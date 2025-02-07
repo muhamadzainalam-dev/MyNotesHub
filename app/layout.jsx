@@ -5,7 +5,6 @@ import { Header } from "@/components/ui/header";
 import Footer from "@/components/custom/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import Head from "next/head";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -21,14 +20,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4728036164112649"
-          crossorigin="anonymous"
-        ></script>
-      </Head>
-
       <body>
         <header>
           <Header />
