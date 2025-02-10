@@ -1,5 +1,4 @@
 import React from "react";
-import { ContactCard } from "@/components/custom/ContactCard";
 
 export default function page() {
   const categorydata = [
@@ -118,7 +117,7 @@ export default function page() {
           </div>
         ))}
       </div>
-      <ContactCard />
+      
     </div>
   );
 }

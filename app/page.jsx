@@ -1,7 +1,5 @@
 import React from "react";
-import { ContactCard } from "@/components/custom/ContactCard";
 import { PromoBanner } from "@/components/ui/promo-banner";
-import GoogleAd from "@/components/custom/GooglecardAd";
 
 export default function page() {
   const categorydata = [
@@ -28,7 +26,7 @@ export default function page() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 pt-36 px-4 pb-6">
+    <div className="min-h-screen bg-gray-100 pt-5 px-4 pb-6">
       <PromoBanner />
       <div className="grid grid-cols-2 gap-4">
         {categorydata.map((item) => (
@@ -48,11 +46,7 @@ export default function page() {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-2 gap-4">
-        <GoogleAd slot="4228674601" />
-        <GoogleAd slot="4228674601" />
-      </div>
-      <ContactCard />
+      
     </div>
   );
 }
