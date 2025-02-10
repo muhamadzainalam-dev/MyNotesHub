@@ -4,11 +4,13 @@ import { mdiIncognito } from "@mdi/js";
 
 export default function Footer() {
   return (
-    <div className="h-10 w-full bg-[#d3d3d3] text-white justify-center flex items-center gap-2">
-      <div className="w-6 h-6 rounded-full overflow-hidden bg-black text-white flex justify-center items-center">
-        <Icon path={mdiIncognito} size={0.7} />
+    <footer className="w-full bg-amber-400 text-gray-900 py-2 flex items-center justify-center gap-3">
+      <div className="w-8 h-8 rounded-full bg-white text-gray-900 flex justify-center items-center shadow-md">
+        <Icon path={mdiIncognito} size={1} />
       </div>
-      <p className="font-bold">DEVELOP BY MUHAMMAD ZAIN</p>
-    </div>
+      <p className="text-sm md:text-base font-semibold">
+        Developed by <span className="font-bold">Muhammad Zain</span>
+      </p>
+    </footer>
   );
 }

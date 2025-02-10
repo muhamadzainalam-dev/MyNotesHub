@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+"use client"
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/ui/header";
@@ -6,41 +6,41 @@ import Footer from "@/components/custom/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+import { useEffect } from "react";
+import { MobileSidebar } from "@/components/mobile-sidebar";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata = {
-  title: "My Notes Hub",
-  description: "Notes Sharing App",
-};
+// export const metadata = {
+//   title: "My Notes Hub",
+//   description: "Notes Sharing App",
+// };
 
 export default function RootLayout({ children }) {
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {
+      console.error("Ads error:", e);
+    }
+  }, []);
+
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
         {/* Google AdSense Script */}
         <Script
           async
+          strategy="afterInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8503201959339230"
           crossOrigin="anonymous"
-          strategy="afterInteractive" 
         />
-        <Script id="adsbygoogle-init" strategy="afterInteractive">
-          {`(adsbygoogle = window.adsbygoogle || []).push({});`}
-        </Script>
-
         <header>
           <Header />
         </header>
+        <MobileSidebar />
         <main>{children}</main>
         <footer>
           <Footer />
         </footer>
-
         <Toaster />
         <SpeedInsights />
         <Analytics />

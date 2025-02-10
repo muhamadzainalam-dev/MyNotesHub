@@ -1,12 +1,57 @@
-import { PromoBanner } from "@/components/ui/promo-banner";
-import { Category } from "@/components/ui/category";
+import React from "react";
 import { ContactCard } from "@/components/custom/ContactCard";
+import { PromoBanner } from "@/components/ui/promo-banner";
+import GoogleAd from "@/components/custom/GooglecardAd";
 
-export default function Page() {
+export default function page() {
+  const categorydata = [
+    {
+      name: "Class IX",
+      image: "/09.png",
+      link: "/pages/CLassIX",
+    },
+    {
+      name: "Class X",
+      image: "/10.png",
+      link: "/pages/ClassX",
+    },
+    {
+      name: "Class XI",
+      image: "/11.png",
+      link: "/pages/ClassXI",
+    },
+    {
+      name: "Class XII",
+      image: "/12.png",
+      link: "/pages/ClassXII",
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-gray-100 pt-32 px-4 pb-6">
+    <div className="min-h-screen bg-gray-100 pt-36 px-4 pb-6">
       <PromoBanner />
-      <Category />
+      <div className="grid grid-cols-2 gap-4">
+        {categorydata.map((item) => (
+          <div className="bg-white rounded-xl overflow-hidden" key={item.name}>
+            <a href={item.link} target="blank">
+              <div className="aspect-square rounded-xl overflow-hidden border">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-3">
+                <h3 className="font-medium mb-1 text-center">{item.name}</h3>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+      <div className="grid grid-cols-2 gap-4">
+        <GoogleAd slot="4228674601" />
+        <GoogleAd slot="4228674601" />
+      </div>
       <ContactCard />
     </div>
   );
