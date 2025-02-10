@@ -25,8 +25,8 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
-      <div className="pt-28 max-w-2xl mx-auto mt-10 p-6">
+    <div className="bg-gray-100">
+      <div className="max-w-2xl mx-auto p-6">
         <h1 className="text-3xl font-bold text-gray-900 text-center mb-6">
           Contact Us
         </h1>

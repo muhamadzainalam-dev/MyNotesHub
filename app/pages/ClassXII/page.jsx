@@ -82,7 +82,7 @@ export default function page() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 pt-36 px-4 pb-6">
+    <div className="min-h-screen bg-gray-100 px-4 pb-6">
       <h1 className="text-sm text-justify mb-5 border p-2 rounded-xl">
         ALL MATERIAL FOR
         <span className="font-bold text-amber-400">CLASS XII</span> (All Subject
@@ -117,7 +117,6 @@ export default function page() {
           </div>
         ))}
       </div>
-      
     </div>
   );
 }

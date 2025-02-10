@@ -6,7 +6,7 @@ export default function HowToUse() {
   const { toast } = useToast();
 
   return (
-    <div className="min-h-screen mt-28 bg-gray-100 px-4 py-12">
+    <div className="bg-gray-100 px-4 py-12">
       <div className="bg-white p-4 rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold text-center text-amber-400 mb-8">
           How to Use?
