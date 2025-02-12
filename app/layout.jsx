@@ -51,8 +51,8 @@ export default function RootLayout({ children }) {
 
         <main>
           {pathname !== "/pages/AboutUs" && (
-            <div className="bg-gray-100 px-4">
-              <div className="w-full min-h-[90px] flex justify-center">
+            <div className="h-auto bg-gray-100 px-4">
+              <div>
                 <GoogleAd slot="4228674601" />
               </div>
             </div>
