@@ -15,7 +15,6 @@ import { usePathname } from "next/navigation";
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const [adsLoaded, setAdsLoaded] = useState(false);
-  const excludedPaths = ["/pages/AboutUs", "/pages/howto", "/pages/ContactUs"];
 
   useEffect(() => {
     const handleAdsLoaded = () => setAdsLoaded(true);
@@ -27,6 +26,7 @@ export default function RootLayout({ children }) {
         window.addEventListener("adsbygoogle", handleAdsLoaded);
       }
     }
+
     return () => {
       window.removeEventListener("adsbygoogle", handleAdsLoaded);
     };
@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className="bg-gray-100 pt-32">
+      <body>
         {/* Google AdSense Script */}
         <Script
           async
@@ -43,30 +43,31 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
           onLoad={() => setAdsLoaded(true)}
         />
+
         <header>
           <Header />
         </header>
+
         <MobileSidebar />
         <main>
           {pathname !== "/pages/AboutUs" && (
-            <div className="h-auto bg-gray-100 px-4 mb-5">
-              <div className="flex items-center justify-center">
+            <div className="bg-gray-100 px-4 pb-6">
+              <div className="h-full">
                 <GoogleAd slot="4228674601" />
               </div>
             </div>
           )}
-
           {children}
-          {/* Bottom Ads */}
           {pathname !== "/pages/AboutUs" && (
-            <div className="bg-gray-100 px-4 pb-6 mb-5">
-              <div className="h-full flex items-center justify-center">
+            <div className="bg-gray-100 px-4 pb-6">
+              <div className="h-full">
                 <GoogleAd slot="4228674601" />
               </div>
-              {!excludedPaths.includes(pathname) && <ContactCard />}
+              <ContactCard />
             </div>
           )}
         </main>
+
         <footer>
           <Footer />
         </footer>

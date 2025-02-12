@@ -1,35 +1,19 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const GoogleAd = ({ slot }) => {
-  const [adsLoaded, setAdsLoaded] = useState(false);
-
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const checkAds = () => {
-        if (window.adsbygoogle) {
-          setAdsLoaded(true);
-          window.adsbygoogle.push({});
-        }
-      };
-
-      if (window.adsbygoogle) {
-        checkAds();
-      } else {
-        const interval = setInterval(() => {
-          if (window.adsbygoogle) {
-            checkAds();
-            clearInterval(interval);
-          }
-        }, 500);
-      }
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {
+      console.error("Ads error:", e);
     }
   }, []);
 
   return (
     <ins
       className="adsbygoogle"
-      style={{ display: "block", minHeight: "100px" }} // Ensure visibility
+      style={{ display: "block" }}
       data-ad-client="ca-pub-8503201959339230"
       data-ad-slot={slot}
       data-ad-format="auto"
