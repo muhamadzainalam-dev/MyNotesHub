@@ -115,7 +115,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className="bg-gray-100 pt-32">
+      <body className="bg-gray-100">
         {/* Google AdSense Script */}
         <Script
           async
