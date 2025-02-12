@@ -12,34 +12,6 @@ import { ContactCard } from "@/components/custom/ContactCard";
 import GoogleAd from "@/components/custom/GooglecardAd";
 import { usePathname } from "next/navigation";
 
-// Ad Component to handle initialization properly
-const AdBanner = () => {
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.adsbygoogle) {
-      try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      } catch (e) {
-        console.error("AdSense error:", e);
-      }
-    }
-  }, []);
-
-  return (
-    <div className="mt-32 max-w-8xl mx-auto bg-gray-100 p-4">
-      <div className="flex justify-center">
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-8503201959339230"
-          data-ad-slot="1436658600"
-          data-ad-format="horizontal"
-          data-full-width-responsive="true"
-        ></ins>
-      </div>
-    </div>
-  );
-};
-
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const [adsLoaded, setAdsLoaded] = useState(false);
@@ -78,8 +50,13 @@ export default function RootLayout({ children }) {
         <MobileSidebar />
 
         <main>
-          {/* Render Ad Only When Script is Loaded */}
-          {adsLoaded && pathname !== "/pages/AboutUs" && <AdBanner />}
+          {pathname !== "/pages/AboutUs" && (
+            <div className="bg-gray-100 px-4">
+              <div className="bg-white">
+                <GoogleAd slot="4228674601" />
+              </div>
+            </div>
+          )}
           {children}
 
           {/* Bottom Ads */}
