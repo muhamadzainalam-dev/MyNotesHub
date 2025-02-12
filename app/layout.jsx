@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body>
+      <body className="min-h-screen flex flex-col">
         {/* Google AdSense Script */}
         <Script
           async
@@ -70,7 +70,7 @@ export default function RootLayout({ children }) {
           )}
         </main>
 
-        <footer>
+        <footer className="mt-auto">
           <Footer />
         </footer>
 
