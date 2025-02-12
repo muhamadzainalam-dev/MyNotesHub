@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
         <main>
           {pathname !== "/pages/AboutUs" && (
             <div className="bg-gray-100 px-4">
-              <div>
+              <div className="h-full">
                 <GoogleAd slot="4228674601" />
               </div>
             </div>
@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
           {/* Bottom Ads */}
           {pathname !== "/pages/AboutUs" && (
             <div className="bg-gray-100 px-4 pb-6">
-              <div>
+              <div className="h-full">
                 <GoogleAd slot="4228674601" />
               </div>
               <ContactCard />
