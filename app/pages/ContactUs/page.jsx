@@ -88,19 +88,19 @@ export default function ContactUs() {
 
         <div className="mt-6 flex justify-center gap-4">
           <Link
-            href="https://facebook.com"
+            href="https://wa.me/+923163834219"
             className="text-gray-700 hover:text-blue-600"
           >
             <Button>Whatsapp</Button>
           </Link>
           <Link
-            href="https://twitter.com"
+            href="https://www.facebook.com/mohamadzainalam"
             className="text-gray-700 hover:text-blue-400"
           >
             <Button>Faceboo.</Button>
           </Link>
           <Link
-            href="https://instagram.com"
+            href="https://www.instagram.com/mohammadzainalam"
             className="text-gray-700 hover:text-pink-500"
           >
             <Button>Insta.</Button>
