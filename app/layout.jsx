@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">
+      <body>
         {/* Google AdSense Script */}
         <Script
           async
@@ -52,11 +52,12 @@ export default function RootLayout({ children }) {
         <main>
           {pathname !== "/pages/AboutUs" && (
             <div className="bg-gray-100 px-4">
-              <div className="h-full">
+              <div className="w-full min-h-[90px] flex justify-center">
                 <GoogleAd slot="4228674601" />
               </div>
             </div>
           )}
+
           {children}
 
           {/* Bottom Ads */}
@@ -70,7 +71,7 @@ export default function RootLayout({ children }) {
           )}
         </main>
 
-        <footer className="mt-auto">
+        <footer>
           <Footer />
         </footer>
 
