@@ -18,9 +18,18 @@ export default function RootLayout({ children }) {
   const excludedPaths = ["/pages/AboutUs", "/pages/howto", "/pages/ContactUs"];
 
   useEffect(() => {
+    const handleAdsLoaded = () => setAdsLoaded(true);
+
     if (typeof window !== "undefined") {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      if (window.adsbygoogle) {
+        setAdsLoaded(true);
+      } else {
+        window.addEventListener("adsbygoogle", handleAdsLoaded);
+      }
     }
+    return () => {
+      window.removeEventListener("adsbygoogle", handleAdsLoaded);
+    };
   }, []);
 
   return (
