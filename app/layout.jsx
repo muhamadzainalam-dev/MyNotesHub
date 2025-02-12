@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body>
+      <body className="bg-gray-100 pt-32">
         {/* Google AdSense Script */}
         <Script
           async
@@ -48,29 +48,25 @@ export default function RootLayout({ children }) {
           <Header />
         </header>
         <MobileSidebar />
-
         <main>
           {pathname !== "/pages/AboutUs" && (
-            <div className="h-auto bg-gray-100 px-4">
-              <div>
+            <div className="h-auto bg-gray-100 px-4 mb-5">
+              <div className="flex justify-center">
                 <GoogleAd slot="4228674601" />
               </div>
             </div>
           )}
-
           {children}
-
           {/* Bottom Ads */}
           {pathname !== "/pages/AboutUs" && (
-            <div className="bg-gray-100 px-4 pb-6">
-              <div className="h-full">
+            <div className="bg-gray-100 px-4 pb-6 mb-5">
+              <div className="h-full flex justify-center">
                 <GoogleAd slot="4228674601" />
               </div>
               <ContactCard />
             </div>
           )}
         </main>
-
         <footer>
           <Footer />
         </footer>
