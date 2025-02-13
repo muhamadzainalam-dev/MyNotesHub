@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
           <div>
             {pathname !== "/pages/AboutUs" && (
               <div className="bg-gray-100 px-4 pb-6">
-                <div className="h-auto">
+                <div className="mt-32 h-auto">
                   <GoogleAd slot="4228674601" />
                 </div>
               </div>
