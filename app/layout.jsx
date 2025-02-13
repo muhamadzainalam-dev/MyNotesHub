@@ -50,13 +50,15 @@ export default function RootLayout({ children }) {
 
         <MobileSidebar />
         <main>
-          {pathname !== "/pages/AboutUs" && (
-            <div className="bg-gray-100 px-4 pb-6">
-              <div className="h-auto">
-                <GoogleAd slot="4228674601" />
+          <div>
+            {pathname !== "/pages/AboutUs" && (
+              <div className="bg-gray-100 px-4 pb-6">
+                <div className="h-auto">
+                  <GoogleAd slot="4228674601" />
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
           {children}
           {pathname !== "/pages/AboutUs" && (
             <div className="bg-gray-100 px-4 pb-6">
